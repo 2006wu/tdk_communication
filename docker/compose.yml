@@ -20,6 +20,7 @@ services:
     container_name: ros2-ros1-bridge-ws
     environment:
       - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - ROS_DOMAIN_ID=23
     stop_grace_period: 1s
     depends_on:
       ros-core:
@@ -68,6 +69,7 @@ services:
     container_name: ros2
     environment:
       - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+      - ROS_DOMAIN_ID=23
     stdin_open: true
     tty: true
     network_mode: host
@@ -76,4 +78,4 @@ services:
       # Shared Memory
       - /dev/shm:/dev/shm
       - ~/TDK/E.Commnication/comm-ws:/home/user/E.Communication/comm-ws/
-    command: /bin/bash -c "source /opt/ros/humble/setup.bash && bash"
+    command: /bin/bash -c "apt update && apt install -y ros-humble-rmw-cyclonedds-cpp && source /opt/ros/humble/setup.bash && bash"
