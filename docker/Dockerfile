@@ -3,7 +3,7 @@
 # ============================================
 FROM ubuntu:22.04 AS base
 
-LABEL maintainer="yuzhong1214@gmail.com"
+LABEL maintainer="wuchengzhi20060819@gmail.com"
 
 ENV LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
